@@ -1,38 +1,42 @@
-// Given an array arr[] of positive integers and another integer target. 
-// Determine if there exists two distinct indices such that the sum of there elements is equals to target.
+/*Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.*/
 
 import java.util.HashMap;
 
 public class TwoSum {
-    public static boolean hasTwoSum(int[] arr, int target) {
+    public static int[] twoSum(int[] nums, int target) {
+        // Create a HashMap to store the difference and its index
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            int complement = target - arr[i];
+        // Iterate through the array
+        for (int i = 0; i < nums.length; i++) {
+            // Calculate the difference
+            int difference = target - nums[i];
 
-            // Check if the complement exists in the map and the indices are distinct
-            if (map.containsKey(complement) && map.get(complement) != i) {
-                return true; // A pair exists
+            // Check if the difference is already in the map
+            if (map.containsKey(difference)) {
+                // Return the indices
+                return new int[] { map.get(difference), i };
             }
 
-            // Store the current element with its index
-            map.put(arr[i], i);
+            // Otherwise, store the current number and its index in the map
+            map.put(nums[i], i);
         }
 
-        return false; // No pair found
+        // If no solution is found, throw an exception
+        throw new IllegalArgumentException("No two sum solution");
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 7, 11, 15};
+        // Example input
+        int[] nums = {2, 7, 11, 15};
         int target = 9;
-        System.out.println("Exists: " + hasTwoSum(arr, target)); // Output: true
 
-        int[] arr2 = {3, 2, 4};
-        int target2 = 6;
-        System.out.println("Exists: " + hasTwoSum(arr2, target2)); // Output: true
+        // Call the method and get the result
+        int[] result = twoSum(nums, target);
 
-        int[] arr3 = {1, 2, 3};
-        int target3 = 7;
-        System.out.println("Exists: " + hasTwoSum(arr3, target3)); // Output: false
+        // Print the result
+        System.out.println("Indices: [" + result[0] + ", " + result[1] + "]");
     }
 }
