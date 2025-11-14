@@ -4,36 +4,43 @@
 import java.util.Arrays;
 
 public class AnagramCheck {
-    public static void main(String[] args) {
-        String str1 = "listen";
-        String str2 = "silent";
 
-        if (areAnagrams(str1, str2)) {
-            System.out.println(str1 + " and " + str2 + " are anagrams.");
-        } else {
-            System.out.println(str1 + " and " + str2 + " are not anagrams.");
-        }
-    }
-
-    public static boolean areAnagrams(String str1, String str2) {
-        // Remove whitespace and convert to lowercase
-        str1 = str1.replaceAll("\\s", "").toLowerCase();
-        str2 = str2.replaceAll("\\s", "").toLowerCase();
-
-        // Check if lengths are the same
-        if (str1.length() != str2.length()) {
+    public static boolean isAnagram(String str1, String str2) {
+        // Step 1: Check length
+        if(str1.length() != str2.length()) {
             return false;
         }
 
-        // Convert strings to character arrays
-        char[] charArray1 = str1.toCharArray();
-        char[] charArray2 = str2.toCharArray();
+        int[] count = new int[26]; // assuming lowercase letters only
 
-        // Sort both character arrays
-        Arrays.sort(charArray1);
-        Arrays.sort(charArray2);
+        // Step 2: Count frequency of each char in str1
+        for(int i = 0; i < str1.length(); i++) {
+            count[str1.charAt(i) - 'a']++;
+        }
 
-        // Compare sorted arrays
-        return Arrays.equals(charArray1, charArray2);
+        // Step 3: Subtract frequency using str2
+        for(int i = 0; i < str2.length(); i++) {
+            count[str2.charAt(i) - 'a']--;
+        }
+
+        // Step 4: Check if all counts are 0
+        for(int i = 0; i < 26; i++) {
+            if(count[i] != 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s1 = "listen";
+        String s2 = "silent";
+
+        if(isAnagram(s1, s2)) {
+            System.out.println(s1 + " and " + s2 + " are anagrams");
+        } else {
+            System.out.println(s1 + " and " + s2 + " are not anagrams");
+        }
     }
 }
