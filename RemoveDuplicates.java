@@ -5,43 +5,32 @@
 such that all the distinct elements come at the beginning of the original array. */
 
 public class RemoveDuplicates {
-    public static int removeDuplicates(int[] arr) {
-        // If the array is empty, return 0
-        if (arr.length == 0) {
-            return 0;
+    public static int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0; // no elements
         }
 
-        int k = 1; // Pointer to place the next distinct element
-        
-        // Traverse the array starting from the second element
-        for (int i = 1; i < arr.length; i++) {
-            // If the current element is different from the previous element
-            if (arr[i] != arr[i - 1]) {
-                // Place the distinct element at position k
-                arr[k] = arr[i];
-                // Increment k
-                k++;
+        int k = 1; // pointer for the position of next unique element
+
+        for (int i = 1; i < nums.length; i++) {
+            // if current element is different from previous, it's unique
+            if (nums[i] != nums[i - 1]) {
+                nums[k] = nums[i]; // place it in the next unique position
+                k++; // increment unique count
             }
         }
-        
-        // Return the size of the modified array with distinct elements
-        return k;
+
+        return k; // number of unique elements
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 1, 2};
-        int size1 = removeDuplicates(arr1);
-        System.out.println("Size of modified array: " + size1); // Output: 2
-        System.out.println("Modified array: " + java.util.Arrays.toString(java.util.Arrays.copyOfRange(arr1, 0, size1))); // Output: [1, 2]
+        int[] nums = {1, 1, 2, 2, 3, 4, 4, 5};
+        int k = removeDuplicates(nums);
 
-        int[] arr2 = {0, 0, 1, 1, 1, 2, 2};
-        int size2 = removeDuplicates(arr2);
-        System.out.println("Size of modified array: " + size2); // Output: 3
-        System.out.println("Modified array: " + java.util.Arrays.toString(java.util.Arrays.copyOfRange(arr2, 0, size2))); // Output: [0, 1, 2]
-
-        int[] arr3 = {1, 1, 1, 1, 1};
-        int size3 = removeDuplicates(arr3);
-        System.out.println("Size of modified array: " + size3); // Output: 1
-        System.out.println("Modified array: " + java.util.Arrays.toString(java.util.Arrays.copyOfRange(arr3, 0, size3))); // Output: [1]
+        System.out.println("Number of unique elements: " + k);
+        System.out.print("Array after removing duplicates: ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(nums[i] + " ");
+        }
     }
 }
