@@ -1,0 +1,45 @@
+✅ What is Divide & Conquer? (In Simple Words)
+
+Divide & Conquer means:
+1️⃣ Divide the problem into smaller parts
+2️⃣ Solve each small part
+3️⃣ Combine the answers to get the final result
+
+Instead of solving a big problem directly, we:
+✅ Break it into smaller problems
+✅ Solve them easily
+✅ Merge the results
+
+✅ Classic Divide & Conquer Algorithms
+| Algorithm             | How it Uses Divide & Conquer  |
+| --------------------- | ----------------------------- |
+| Binary Search         | Divide array into halves      |
+| Merge Sort            | Split → sort → merge          |
+| Quick Sort            | Partition → sort left & right |
+| Longest Substring ≥ K | Split at invalid characters   |
+
+✅ Example 1 - Longest Substring with At least K Repeating Characters
+Key Idea:
+
+Find a character whose frequency < k
+
+That character cannot belong to valid substring
+
+So:
+
+  Split at that character
+  Solve left part
+  Solve right part
+  Take maximum
+
+✅ When Should You Use Divide & Conquer?
+
+Use it when:
+✔ Problem can be broken into smaller independent parts
+✔ Same logic applies to the smaller parts
+✔ Solution of full problem depends on sub-problems
+
+What is Divide & Conquer?
+Divide & Conquer is a problem-solving technique where we split a large problem into smaller subproblems, 
+solve each one recursively, and combine their results to get the final solution.
+
