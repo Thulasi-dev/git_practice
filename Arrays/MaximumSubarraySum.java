@@ -6,32 +6,34 @@
 // Given an integer array arr[]. You need to find the maximum sum of a subarray.
 
 public class MaximumSubarraySum {
-    public static int maxSubarraySum(int arr[]) {
-        // Initialize variables
+
+    public static int maxSubArray(int[] arr) {
         int currentSum = 0;
         int maxSum = Integer.MIN_VALUE;
 
-        // Iterate through the array
-        for (int num : arr) {
-            // Update the current sum
-            currentSum = Math.max(num, currentSum + num);
+        for (int i = 0; i < arr.length; i++) {
+            currentSum += arr[i];
 
-            // Update the maximum sum if needed
-            maxSum = Math.max(maxSum, currentSum);
+            // Update maximum sum
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+
+            // If current sum becomes negative, reset it
+            if (currentSum < 0) {
+                currentSum = 0;
+            }
         }
 
         return maxSum;
     }
 
     public static void main(String[] args) {
-        // Example input
         int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-
-        // Find and print the maximum sum of a subarray
-        int maxSum = maxSubarraySum(arr);
-        System.out.println("The maximum sum of a subarray is: " + maxSum);
+        System.out.println(maxSubArray(arr)); // Output: 6
     }
 }
+
 
 // Input: arr[] = [2, 3, -8, 7, -1, 2, 3]
 // Output: 11
