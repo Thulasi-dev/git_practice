@@ -5,7 +5,11 @@ Values in range 1 to n
 Each element appears once or twice
 
 ✅ Optimal Solution – Index Marking Technique
-👉 O(n) time, O(1) extra space*/
+👉 O(n) time, O(1) extra space
+
+🔹 Key idea:
+Use array indices as markers
+Negative value means already visited */
 
 import java.util.*;
 
