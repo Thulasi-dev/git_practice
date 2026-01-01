@@ -1,0 +1,169 @@
+# 🧠 COMMENT-TEMPLATE CHEAT SHEET (Interview Gold)
+
+Use these templates to **think → speak → code**.
+
+---
+
+## 1️⃣ Array – Max / Min / Second Max
+
+**Problems**
+
+* Largest element
+* Smallest element
+* Second largest / second smallest
+
+```java
+// Step 1: Assume the first element as the answer
+// Step 2: Traverse the array from the next element
+// Step 3: Compare current element with the stored answer
+// Step 4: Update the answer if a better value is found
+// Step 5: After traversal, return the result
+```
+
+🧠 Pattern to remember:
+👉 **Assume → Traverse → Compare → Update → Return**
+
+---
+
+## 2️⃣ Two Pointer (Container, Pair Sum, Reverse Array)
+
+**Problems**
+
+* Container with most water
+* Two sum (sorted array)
+* Reverse array / string
+
+```java
+// Step 1: Initialize two pointers at required positions
+// Step 2: Process elements using both pointers
+// Step 3: Calculate required value using pointer positions
+// Step 4: Update the answer if needed
+// Step 5: Move the pointer based on the problem condition
+```
+
+🧠 Pattern:
+👉 **Two ends → Calculate → Update → Move pointer**
+
+---
+
+## 3️⃣ Sliding Window (Subarray Problems)
+
+**Problems**
+
+* Maximum sum subarray of size k
+* Longest substring without repeating characters
+
+```java
+// Step 1: Initialize window variables and result
+// Step 2: Expand the window by moving the right pointer
+// Step 3: Update window data (sum / frequency)
+// Step 4: Shrink the window when condition breaks
+// Step 5: Update the result during valid window
+```
+
+🧠 Pattern:
+👉 **Expand → Update → Shrink → Record**
+
+---
+
+## 4️⃣ Hashing (Frequency / Repeating Elements)
+
+**Problems**
+
+* First repeating element
+* Non-repeating character
+* Frequency count
+
+```java
+// Step 1: Create a data structure to store frequencies
+// Step 2: Traverse the input and update frequency count
+// Step 3: Check the condition based on frequency values
+// Step 4: Return the required element or result
+```
+
+🧠 Pattern:
+👉 **Store → Count → Check → Return**
+
+---
+
+## 5️⃣ Recursion / Backtracking
+
+**Problems**
+
+* Permutations
+* Subsets
+* Combinations
+
+```java
+// Step 1: Define the base condition to stop recursion
+// Step 2: Choose an element or option
+// Step 3: Recur for the remaining problem
+// Step 4: Backtrack by undoing the choice
+```
+
+🧠 Pattern:
+👉 **Base → Choose → Recur → Undo**
+
+---
+
+## 6️⃣ Dynamic Programming (DP)
+
+**Problems**
+
+* Coin change
+* Perfect squares
+* Climbing stairs
+
+```java
+// Step 1: Define the DP state meaning
+// Step 2: Initialize base cases
+// Step 3: Build the DP solution using previous states
+// Step 4: Store intermediate results
+// Step 5: Return the final DP value
+```
+
+🧠 Pattern:
+👉 **State → Base → Transition → Store → Answer**
+
+---
+
+## 7️⃣ Math / Prime / Number Problems
+
+**Problems**
+
+* Prime check
+* GCD / LCM
+* Perfect number
+
+```java
+// Step 1: Handle edge cases
+// Step 2: Loop only till the required limit
+// Step 3: Check mathematical condition
+// Step 4: Return result based on condition
+```
+
+🧠 Pattern:
+👉 **Edge → Loop → Check → Return**
+
+---
+
+## 8️⃣ Matrix Problems
+
+**Problems**
+
+* Spiral matrix
+* Transpose
+* Matrix rotation
+
+```java
+// Step 1: Understand row and column boundaries
+// Step 2: Traverse matrix in required order
+// Step 3: Update boundaries after each traversal
+// Step 4: Continue until all elements are processed
+```
+
+🧠 Pattern:
+👉 **Boundaries → Traverse → Update → Repeat**
+
+---
+
